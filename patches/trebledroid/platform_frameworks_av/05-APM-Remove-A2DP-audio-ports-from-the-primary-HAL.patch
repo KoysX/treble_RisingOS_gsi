@@ -1,7 +1,7 @@
-From 02eb4803499890a0cba2f6dfc7bfa5a03d043dd2 Mon Sep 17 00:00:00 2001
+From d22f1b8aedf56b418c0a6776531dc7959512dd85 Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Thu, 25 Aug 2022 13:30:29 -0400
-Subject: [PATCH 3/3] APM: Remove A2DP audio ports from the primary HAL
+Subject: [PATCH 05/25] APM: Remove A2DP audio ports from the primary HAL
 
 These ports defined in the primary HAL are intended for A2DP offloading,
 however they do not work in general on GSIs, and will interfere with
@@ -12,11 +12,11 @@ Remove them as we parse the policy XML.
 Co-authored-by: Pierre-Hugues Husson <phh@phh.me>
 Change-Id: I3305594a17285da113167b419543543f0ef71122
 ---
- .../managerdefinitions/src/Serializer.cpp     | 26 ++++++++++++++++---
- 1 file changed, 22 insertions(+), 4 deletions(-)
+ .../managerdefinitions/src/Serializer.cpp     | 28 ++++++++++++++++---
+ 1 file changed, 24 insertions(+), 4 deletions(-)
 
 diff --git a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
-index f5233f2a42..6630d06f6d 100644
+index ce8b3b81b0..4864cb667f 100644
 --- a/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 +++ b/services/audiopolicy/common/managerdefinitions/src/Serializer.cpp
 @@ -26,6 +26,7 @@
@@ -27,7 +27,7 @@ index f5233f2a42..6630d06f6d 100644
  #include <utils/Log.h>
  #include <utils/StrongPointer.h>
  #include <utils/Errors.h>
-@@ -334,11 +335,8 @@ status_t PolicySerializer::deserializeCollection(const xmlNode *cur,
+@@ -335,10 +336,7 @@ status_t PolicySerializer::deserializeCollection(const xmlNode *cur,
                              Trait::collectionTag);
                          return status;
                      }
@@ -35,12 +35,11 @@ index f5233f2a42..6630d06f6d 100644
 -                    // Skip a vendor extension element.
 -                } else {
 -                    return BAD_VALUE;
-                 }
 +                // Ignore elements that failed to parse, e.g. routes with invalid sinks
+                 }
              }
          }
-         if (!xmlStrcmp(cur->name, reinterpret_cast<const xmlChar*>(Trait::tag))) {
-@@ -679,6 +677,7 @@ std::variant<status_t, ModuleTraits::Element> PolicySerializer::deserialize<Modu
+@@ -807,6 +805,7 @@ std::variant<status_t, ModuleTraits::Element> PolicySerializer::deserialize<Modu
          ALOGE("%s: No %s found", __func__, Attributes::name);
          return BAD_VALUE;
      }
@@ -48,10 +47,11 @@ index f5233f2a42..6630d06f6d 100644
      uint32_t versionMajor = 0, versionMinor = 0;
      std::string versionLiteral = getXmlAttribute(cur, Attributes::version);
      if (!versionLiteral.empty()) {
-@@ -704,6 +703,25 @@ std::variant<status_t, ModuleTraits::Element> PolicySerializer::deserialize<Modu
+@@ -832,6 +831,27 @@ std::variant<status_t, ModuleTraits::Element> PolicySerializer::deserialize<Modu
      if (status != NO_ERROR) {
          return status;
      }
++
 +    bool shouldEraseA2DP = name == "primary" && property_get_bool("persist.bluetooth.system_audio_hal.enabled", false);
 +    if (shouldEraseA2DP) {
 +        // Having A2DP ports in the primary audio HAL module will interfere with sysbta
@@ -71,6 +71,7 @@ index f5233f2a42..6630d06f6d 100644
 +            }
 +        }
 +    }
++
      module->setDeclaredDevices(devicePorts);
  
      RouteTraits::Collection routes;
