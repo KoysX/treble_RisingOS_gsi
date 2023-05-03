@@ -11,19 +11,19 @@ diff --git a/core/java/android/os/storage/StorageManager.java b/core/java/androi
 index e0989b8d9f1f..a9c76096ce38 100644
 --- a/core/java/android/os/storage/StorageManager.java
 +++ b/core/java/android/os/storage/StorageManager.java
-@@ -1693,9 +1693,11 @@ public class StorageManager {
-         return RoSystemProperties.CRYPTO_ENCRYPTED;
-     }
- 
+@@ -1755,9 +1755,11 @@ public class StorageManager {
+      * Also note that this state will not change without a teardown of the
+      * framework, so no service needs to check for changes during their lifespan
+      */
 -    public static boolean inCryptKeeperBounce() {
-+    /**
++     /**
 +     * public static boolean inCryptKeeperBounce() {
          return false;
      }
 +    */
  
-     /** {@hide}
-      * Is this device file encrypted?
+     /** {@hide} */
+     public static boolean isFileEncryptedEmulatedOnly() {
 -- 
 2.34.1
 
