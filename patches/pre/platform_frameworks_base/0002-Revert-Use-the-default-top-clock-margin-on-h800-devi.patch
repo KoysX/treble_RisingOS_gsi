@@ -1,0 +1,35 @@
+From abafac1c897d7cdf0f4a227f95219ebef2347557 Mon Sep 17 00:00:00 2001
+From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
+Date: Thu, 29 Sep 2022 11:27:57 +0000
+Subject: [PATCH 2/2] Revert "Use the default top clock margin on values devices"
+
+This reverts commits 50ba380f4d8d1c2523e0f76295ca556038796bfd
+and 2a254b4d479029aec46f79a0ed14ffab6d0424bc.
+---
+ packages/SystemUI/res/values/dimens.xml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/packages/SystemUI/res/values/dimens.xml b/packages/SystemUI/res/values/dimens.xml
+index b8b72360..8f5034ed 100644
+--- a/packages/SystemUI/res/values/dimens.xml
++++ b/packages/SystemUI/res/values/dimens.xml
+@@ -295,13 +295,13 @@
+     <dimen name="status_bar_icon_padding">0dp</dimen>
+ 
+     <!-- the padding on the start of the statusbar -->
+-    <dimen name="status_bar_padding_start">8dp</dimen>
++    <dimen name="status_bar_padding_start">18dp</dimen>
+ 
+     <!-- the padding on the end of the statusbar -->
+     <dimen name="status_bar_padding_end">8dp</dimen>
+ 
+     <!-- the padding on the top of the statusbar (usually 0) -->
+-    <dimen name="status_bar_padding_top">0dp</dimen>
++    <dimen name="status_bar_padding_top">2dp</dimen>
+ 
+     <!-- the radius of the overflow dot in the status bar -->
+     <dimen name="overflow_dot_radius">2dp</dimen>
+ 
+-- 
+2.20.1
+
