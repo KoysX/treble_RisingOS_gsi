@@ -98,7 +98,9 @@ In rom folder,
  
 If you face any conflicts while applying patches, apply the patch manually.
 
-
+## Notes
+- If bluetooth calls or bluetooth media do not work well for you, make sure you have the "Use System Wide BT HAL" checkbox enabled on the Misc page of Treble App. If not, enable and reboot.
+- If you have a non-Samsung device with a Qualcomm chipset and VoLTE isn't working with the default IMS package provided by Treble App, try installing this [alternative IMS package](https://treble.phh.me/stable/ims-caf-s.apk).
 
 ## Credits
 These people have helped this project in some way or another, so they should be the ones who receive all the credit:
