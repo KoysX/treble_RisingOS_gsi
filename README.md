@@ -17,12 +17,12 @@ To do that, run these commands:
 ### To initialize your local repository, run this command:
 
 ```bash
-   repo init -u https://github.com/RisingTechOSS/android.git -b thirteen
+   repo init -u https://github.com/RisingTechOSS/android -b thirteen
 ```
 ### Want to save some space ? Then use this:
 
 ```bash
-   repo init --depth=1 -u https://github.com/RisingTechOSS/android.git -b thirteen
+   repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
 ```
 
 ### Clone this repo:
@@ -41,7 +41,7 @@ To do that, run these commands:
 ### Afterwards, sync the source by running this command:
 
 ```bash
-repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
 ```
 
 ### After syncing, apply the patches:
@@ -77,8 +77,8 @@ In rom folder,
 
  ```
  . build/envsetup.sh
- ccache -M 150G -F 0
- lunch treble_arm64_bgN-userdebug 
+ ccache -M 100G -F 0
+ lunch treble_arm64_bvN-userdebug 
  make systemimage -j$(nproc --all)
  ```
 
