@@ -1,0 +1,28 @@
+From 3f7f3f9546f9f23d66381f7dff887cd562285ce6 Mon Sep 17 00:00:00 2001
+From: Paul Keith <javelinanddart@gmail.com>
+Date: Tue, 30 Oct 2018 15:46:18 +0100
+Subject: [PATCH] Messaging: Add "Mark as read" quick action for message
+ notifications
+
+Change-Id: I7194dca022e5062926fa35709de282721ca64320
+---
+ res/values/cm_strings.xml                          |  3 +++
+ 8 files changed, 81 insertions(+), 2 deletions(-)
+
+diff --git a/res/values/cm_strings.xml b/res/values/cm_strings.xml
+index f285555..858f093 100644
+--- a/res/values/cm_strings.xml
++++ b/res/values/cm_strings.xml
+@@ -23,6 +23,9 @@
+     <string name="show_emoticons_pref_title">Emoticons access</string>
+     <string name="show_emoticons_pref_summary">Show the emoticons key on the keyboard</string>
+ 
++    <!-- Mark message as read -->
++    <string name="notification_mark_as_read">Mark as read</string>
++
+     <!-- Notification channel -->
+     <string name="notification_channel_messages_title">Messages</string>
+ </resources>
+-- 
+2.25.1
+
