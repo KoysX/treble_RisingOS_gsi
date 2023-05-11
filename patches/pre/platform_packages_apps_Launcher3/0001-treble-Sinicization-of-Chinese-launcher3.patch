@@ -1,0 +1,55 @@
+From db00398d4455e3d0b1dd16cacc3f41eb5f60316a Mon Sep 17 00:00:00 2001
+From: Kuaipz <2685697179@qq.com>
+Date: Fri, 12 May 2023 00:45:26 +0800
+Subject: [PATCH] treble-Sinicization-of-Chinese-launcher3
+
+Change-Id: Ib5819f68cdc273033778dce30bb052f195672488
+---
+ res/values-zh-rCN/cr_strings.xml | 26 +++++++++++++++++++++++++-
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+
+diff --git a/res/values-zh-rCN/cr_strings.xml b/res/values-zh-rCN/cr_strings.xml
+index 98cb1d5..7a14ba0 100644
+--- a/res/values-zh-rCN/cr_strings.xml
++++ b/res/values-zh-rCN/cr_strings.xml
+@@ -215,6 +215,8 @@
+     <string name="quick_event_ambient_weather_title">天气状况</string>
+     <string name="quick_event_ambient_weather_summary">显示当前天气状况和温度</string>
+     <string name="quick_event_ambient_weather_enabled_info">需要启用天气服务</string>
++    <string name="quick_event_ambient_detailed_weather_title">详细的天气状况</string>
++    <string name="quick_event_ambient_detailed_weather_summary">显示详细的天气状况和温度</string>
+     <!-- Background opacity -->
+     <string name="background_opacity_title">背景模糊度</string>
+     <!-- Taskbar -->
+@@ -250,4 +252,26 @@
+     <!-- Restart launcher -->
+     <string name="pref_restart_title">重新启动</string>
+     <string name="pref_restart_summary">手动重启启动器以应用未生效的设置</string>
+-</resources>
++   <!-- Recents Scroll Vibration -->
++    <string name="pref_recents_vibration_title">在最近滚动条上启用触觉反馈</string>
++    
++    <string name="recents_kill_app">Kill app</string>
++    <!-- Toast for Clear All, App Locked n Unlocked -->
++    <string name="action_toast_enabled_title">Action Toasts</string>
++    <string name="action_toast_enabled_summary">Enable-disable Toast clear all</string>
++
++    <!-- QSB -->
++    <string name="qsb_search_hint">搜索此手机和更多...</string>
++
++    <!-- Shake Actions -->
++    <string name="shake_clear_summary">摇一摇手机清空最近任务</string>
++    <string name="shake_clear_intensity_title">摇动强度</string>
++    <string name="shake_gesture_actions_title">摇动手势动作</string>
++    <string name="shake_gesture_actions_intensity_title">摇动手势强度</string>
++    <string name="shake_gestures_disabled">禁用摇动手势</string>
++    <string name="shake_gestures_torch">摇动设备以启用/禁用手电筒</string>
++    <string name="shake_gestures_music">摇动设备播放/暂停/跳过音乐（取决于播放设备）</string>
++    
++
++
++</resources>
+\ No newline at end of file
+-- 
+2.20.1
+
