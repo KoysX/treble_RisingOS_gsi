@@ -1,0 +1,47 @@
+From 2b56b81352b22f6a1e4cf72271348e063db1054d Mon Sep 17 00:00:00 2001
+From: Kuaipz <2685697179@qq.com>
+Date: Fri, 12 May 2023 09:38:04 +0800
+Subject: [PATCH] treble-gms-common-lite
+
+---
+ common/common-vendor.mk | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+
+diff --git a/common/common-vendor.mk b/common/common-vendor.mk
+index f4ac093..899ec80 100644
+--- a/common/common-vendor.mk
++++ b/common/common-vendor.mk
+@@ -59,7 +59,8 @@ PRODUCT_PACKAGES += \
+     WellbeingPrebuilt \
+     GoogleServicesFramework \
+     GoogleTTS \
+-    Velvet
++    PrebuiltBugle \
++    CalendarGooglePrebuilt
+ 
+ ifeq ($(strip $(TARGET_CORE_GMS_EXTRAS)),true)
+ PRODUCT_PACKAGES += \
+@@ -96,8 +97,6 @@ PRODUCT_PACKAGES += \
+     LocationHistoryPrebuilt \
+     MarkupGoogle \
+     Photos \
+-    PrebuiltDeskClockGoogle \
+-    AndroidAutoStubPrebuilt \
+     ConfigUpdater \
+     GoogleOneTimeInitializer \
+     GoogleRestorePrebuilt \
+@@ -106,10 +105,8 @@ PRODUCT_PACKAGES += \
+     PrebuiltGmsCoreSc \
+     AndroidPlatformServices \
+     SetupWizardPrebuilt \
+-    Velvet \
+     WellbeingPrebuilt \
+-    GoogleServicesFramework \
+-    PixelSetupWizard
++    GoogleServicesFramework
+ 
+ endif
+ 
+-- 
+2.20.1
+

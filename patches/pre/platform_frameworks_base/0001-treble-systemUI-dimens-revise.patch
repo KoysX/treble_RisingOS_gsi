@@ -1,14 +1,12 @@
-From 9ca4c9ed59f2d710e2ed65d266c346f6c76bf06d Mon Sep 17 00:00:00 2001
-From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
-Date: Thu, 29 Sep 2022 11:27:57 +0000
-Subject: [PATCH 12/20] Revert "Use the default top clock margin on h800
- devices"
+From d1e8c2fb0e4fe1e38572244c950e87fedf89e7e7 Mon Sep 17 00:00:00 2001
+From: Kuaipz <2685697179@qq.com>
+Date: Fri, 12 May 2023 09:41:45 +0800
+Subject: [PATCH] treble-systemUI-dimens-revise
 
-This reverts commits 50ba380f4d8d1c2523e0f76295ca556038796bfd
-and 2a254b4d479029aec46f79a0ed14ffab6d0424bc.
+Change-Id: Id41da5fec2d43127c8090ba45fc4ec0f08941343
 ---
  packages/SystemUI/res/values/dimens.xml | 2 +-
- 1 file changed, 1 insertions(+), 1 deletion(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/packages/SystemUI/res/values/dimens.xml b/packages/SystemUI/res/values/dimens.xml
 index c67d923d..b28ce689 100644
@@ -23,7 +21,6 @@ index c67d923d..b28ce689 100644
  
      <!-- the padding on the end of the statusbar -->
      <dimen name="status_bar_padding_end">8dp</dimen>
- 
 -- 
-2.34.1
+2.20.1
 
