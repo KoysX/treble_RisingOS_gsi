@@ -1,0 +1,36 @@
+From 3f4d8e777086bb8d6243f32b87856da6ab33cab6 Mon Sep 17 00:00:00 2001
+From: Kuaipz <2685697179@qq.com>
+Date: Sat, 13 May 2023 19:01:38 +0800
+Subject: [PATCH] treble-launcher3-CN
+
+Change-Id: I0aa528be805cef7cf1d7177bab30cd6da2785d49
+---
+ res/values-zh-rCN/cr_strings.xml | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/res/values-zh-rCN/cr_strings.xml b/res/values-zh-rCN/cr_strings.xml
+index 7a14ba0..931a0fc 100644
+--- a/res/values-zh-rCN/cr_strings.xml
++++ b/res/values-zh-rCN/cr_strings.xml
+@@ -235,6 +235,11 @@
+     <string name="app_info_last_update">上次更新</string>
+     <string name="app_info_version">版本</string>
+     <string name="app_info_more">更多</string>
++
++    <!-- Force monochrome icons -->
++    <string name="pref_force_monochrome_themed_icons_title">强制单色主题图标</string>
++    <string name="pref_force_monochrome_themed_icons_summary">如果应用程序未提供，则生成单色图标（需要重新切换主题图标）</string>
++
+     <!-- Icon pack -->
+     <string name="icon_pack_title">图标包</string>
+     <string name="icon_pack_default_label">默认</string>
+@@ -274,4 +279,4 @@
+     
+ 
+ 
+-</resources>
+\ No newline at end of file
++</resources>
+-- 
+2.34.1
+
