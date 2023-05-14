@@ -90,7 +90,7 @@ In rom folder,
 
    ```
         cd out/target/product/tdgsi_arm64_ab
-        xz -z -k system.img 
+        xz -z -v -T0 system.img 
    ```
 
 
