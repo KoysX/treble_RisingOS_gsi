@@ -1,15 +1,15 @@
-From b8303fd493873749e5e7ff66e9a992094a816564 Mon Sep 17 00:00:00 2001
-From: Pierre-Hugues Husson <phh@phh.me>
-Date: Wed, 29 Mar 2023 16:53:18 -0400
-Subject: [PATCH 27/27] Allow uname syscall in all seccomp -- This is needed
- because of the getCallingSid change in fw/n libbinder
+From d85e06cbe2956a1cb45d843829a8c950b3cb10ca Mon Sep 17 00:00:00 2001
+From: Kuaipz <2685697179@qq.com>
+Date: Sun, 14 May 2023 18:29:45 +0800
+Subject: [PATCH] Allow-uname-syscall-in-all-seccomp-This-is-needed-be
 
+Change-Id: Ic0a3a3d494d6ffd368c37b4d99be424e34b99a3a
 ---
  services/mediacodec/seccomp_policy/mediacodec-arm.policy        | 2 ++
  services/mediacodec/seccomp_policy/mediacodec-arm64.policy      | 2 ++
  services/mediacodec/seccomp_policy/mediacodec-x86.policy        | 2 ++
  services/mediacodec/seccomp_policy/mediacodec-x86_64.policy     | 2 ++
- services/mediacodec/seccomp_policy/mediaswcodec-arm.policy      | 2 ++
+ services/mediacodec/seccomp_policy/mediaswcodec-arm.policy      | 1 +
  services/mediacodec/seccomp_policy/mediaswcodec-arm64.policy    | 2 ++
  services/mediacodec/seccomp_policy/mediaswcodec-x86.policy      | 2 ++
  services/mediacodec/seccomp_policy/mediaswcodec-x86_64.policy   | 2 ++
@@ -17,10 +17,10 @@ Subject: [PATCH 27/27] Allow uname syscall in all seccomp -- This is needed
  .../mediaextractor/seccomp_policy/mediaextractor-arm64.policy   | 2 ++
  .../mediaextractor/seccomp_policy/mediaextractor-x86.policy     | 2 ++
  .../mediaextractor/seccomp_policy/mediaextractor-x86_64.policy  | 2 ++
- 12 files changed, 24 insertions(+)
+ 12 files changed, 23 insertions(+)
 
 diff --git a/services/mediacodec/seccomp_policy/mediacodec-arm.policy b/services/mediacodec/seccomp_policy/mediacodec-arm.policy
-index b4a9ff6249..aa6fc70d45 100644
+index b4a9ff6..aa6fc70 100644
 --- a/services/mediacodec/seccomp_policy/mediacodec-arm.policy
 +++ b/services/mediacodec/seccomp_policy/mediacodec-arm.policy
 @@ -58,6 +58,8 @@ ugetrlimit: 1
@@ -33,7 +33,7 @@ index b4a9ff6249..aa6fc70d45 100644
  
  @include /system/etc/seccomp_policy/code_coverage.arm.policy
 diff --git a/services/mediacodec/seccomp_policy/mediacodec-arm64.policy b/services/mediacodec/seccomp_policy/mediacodec-arm64.policy
-index b4a9ff6249..aa6fc70d45 100644
+index b4a9ff6..aa6fc70 100644
 --- a/services/mediacodec/seccomp_policy/mediacodec-arm64.policy
 +++ b/services/mediacodec/seccomp_policy/mediacodec-arm64.policy
 @@ -58,6 +58,8 @@ ugetrlimit: 1
@@ -46,7 +46,7 @@ index b4a9ff6249..aa6fc70d45 100644
  
  @include /system/etc/seccomp_policy/code_coverage.arm.policy
 diff --git a/services/mediacodec/seccomp_policy/mediacodec-x86.policy b/services/mediacodec/seccomp_policy/mediacodec-x86.policy
-index 4bcc077ce8..3a08ff6f09 100644
+index 4bcc077..3a08ff6 100644
 --- a/services/mediacodec/seccomp_policy/mediacodec-x86.policy
 +++ b/services/mediacodec/seccomp_policy/mediacodec-x86.policy
 @@ -69,5 +69,7 @@ sched_yield: 1
@@ -58,7 +58,7 @@ index 4bcc077ce8..3a08ff6f09 100644
  @include /system/etc/seccomp_policy/crash_dump.x86.policy
  @include /system/etc/seccomp_policy/code_coverage.x86.policy
 diff --git a/services/mediacodec/seccomp_policy/mediacodec-x86_64.policy b/services/mediacodec/seccomp_policy/mediacodec-x86_64.policy
-index 4bcc077ce8..3a08ff6f09 100644
+index 4bcc077..3a08ff6 100644
 --- a/services/mediacodec/seccomp_policy/mediacodec-x86_64.policy
 +++ b/services/mediacodec/seccomp_policy/mediacodec-x86_64.policy
 @@ -69,5 +69,7 @@ sched_yield: 1
@@ -70,21 +70,22 @@ index 4bcc077ce8..3a08ff6f09 100644
  @include /system/etc/seccomp_policy/crash_dump.x86.policy
  @include /system/etc/seccomp_policy/code_coverage.x86.policy
 diff --git a/services/mediacodec/seccomp_policy/mediaswcodec-arm.policy b/services/mediacodec/seccomp_policy/mediaswcodec-arm.policy
-index 41efce08b1..3c74e077c6 100644
+index 2087926..3c74e07 100644
 --- a/services/mediacodec/seccomp_policy/mediaswcodec-arm.policy
 +++ b/services/mediacodec/seccomp_policy/mediaswcodec-arm.policy
-@@ -86,4 +86,6 @@ getegid32: 1
+@@ -85,6 +85,7 @@ getgid32: 1
+ getegid32: 1
  getgroups32: 1
  sysinfo: 1
- 
-+uname: 1
 +
+ uname: 1
+ 
  @include /apex/com.android.media.swcodec/etc/seccomp_policy/code_coverage.arm.policy
 diff --git a/services/mediacodec/seccomp_policy/mediaswcodec-arm64.policy b/services/mediacodec/seccomp_policy/mediaswcodec-arm64.policy
-index 4317cccfdd..9d9b11538f 100644
+index b242f39..30191c5 100644
 --- a/services/mediacodec/seccomp_policy/mediaswcodec-arm64.policy
 +++ b/services/mediacodec/seccomp_policy/mediaswcodec-arm64.policy
-@@ -90,4 +90,6 @@ sysinfo: 1
+@@ -91,4 +91,6 @@ uname: 1
  setsockopt: 1
  sendmsg: 1
  
@@ -92,7 +93,7 @@ index 4317cccfdd..9d9b11538f 100644
 +
  @include /apex/com.android.media.swcodec/etc/seccomp_policy/code_coverage.arm64.policy
 diff --git a/services/mediacodec/seccomp_policy/mediaswcodec-x86.policy b/services/mediacodec/seccomp_policy/mediaswcodec-x86.policy
-index 9bafe7bc55..4d9192cfe9 100644
+index 9bafe7b..4d9192c 100644
 --- a/services/mediacodec/seccomp_policy/mediaswcodec-x86.policy
 +++ b/services/mediacodec/seccomp_policy/mediaswcodec-x86.policy
 @@ -69,5 +69,7 @@ sched_yield: 1
@@ -104,7 +105,7 @@ index 9bafe7bc55..4d9192cfe9 100644
  @include /apex/com.android.media.swcodec/etc/seccomp_policy/crash_dump.x86.policy
  @include /apex/com.android.media.swcodec/etc/seccomp_policy/code_coverage.x86.policy
 diff --git a/services/mediacodec/seccomp_policy/mediaswcodec-x86_64.policy b/services/mediacodec/seccomp_policy/mediaswcodec-x86_64.policy
-index b0ed0402bb..607d8dadd8 100644
+index b0ed040..607d8da 100644
 --- a/services/mediacodec/seccomp_policy/mediaswcodec-x86_64.policy
 +++ b/services/mediacodec/seccomp_policy/mediaswcodec-x86_64.policy
 @@ -69,5 +69,7 @@ sched_yield: 1
@@ -116,7 +117,7 @@ index b0ed0402bb..607d8dadd8 100644
  @include /apex/com.android.media.swcodec/etc/seccomp_policy/crash_dump.x86_64.policy
  @include /apex/com.android.media.swcodec/etc/seccomp_policy/code_coverage.x86_64.policy
 diff --git a/services/mediaextractor/seccomp_policy/mediaextractor-arm.policy b/services/mediaextractor/seccomp_policy/mediaextractor-arm.policy
-index e1f7fe7265..435f76cf9d 100644
+index e1f7fe7..435f76c 100644
 --- a/services/mediaextractor/seccomp_policy/mediaextractor-arm.policy
 +++ b/services/mediaextractor/seccomp_policy/mediaextractor-arm.policy
 @@ -60,5 +60,7 @@ mremap: arg3 == 3 || arg3 == MREMAP_MAYMOVE
@@ -128,7 +129,7 @@ index e1f7fe7265..435f76cf9d 100644
  @include /apex/com.android.media/etc/seccomp_policy/crash_dump.arm.policy
  @include /apex/com.android.media/etc/seccomp_policy/code_coverage.arm.policy
 diff --git a/services/mediaextractor/seccomp_policy/mediaextractor-arm64.policy b/services/mediaextractor/seccomp_policy/mediaextractor-arm64.policy
-index e54c9187e7..c2be7cf820 100644
+index e54c918..c2be7cf 100644
 --- a/services/mediaextractor/seccomp_policy/mediaextractor-arm64.policy
 +++ b/services/mediaextractor/seccomp_policy/mediaextractor-arm64.policy
 @@ -57,5 +57,7 @@ setsockopt: 1
@@ -140,7 +141,7 @@ index e54c9187e7..c2be7cf820 100644
  @include /apex/com.android.media/etc/seccomp_policy/crash_dump.arm64.policy
  @include /apex/com.android.media/etc/seccomp_policy/code_coverage.arm64.policy
 diff --git a/services/mediaextractor/seccomp_policy/mediaextractor-x86.policy b/services/mediaextractor/seccomp_policy/mediaextractor-x86.policy
-index 5b3762712d..5897402ca1 100644
+index 5b37627..5897402 100644
 --- a/services/mediaextractor/seccomp_policy/mediaextractor-x86.policy
 +++ b/services/mediaextractor/seccomp_policy/mediaextractor-x86.policy
 @@ -59,5 +59,7 @@ sched_yield: 1
@@ -152,7 +153,7 @@ index 5b3762712d..5897402ca1 100644
  @include /apex/com.android.media/etc/seccomp_policy/crash_dump.x86.policy
  @include /apex/com.android.media/etc/seccomp_policy/code_coverage.x86.policy
 diff --git a/services/mediaextractor/seccomp_policy/mediaextractor-x86_64.policy b/services/mediaextractor/seccomp_policy/mediaextractor-x86_64.policy
-index 51df1a238d..6846c01d0e 100644
+index 51df1a2..6846c01 100644
 --- a/services/mediaextractor/seccomp_policy/mediaextractor-x86_64.policy
 +++ b/services/mediaextractor/seccomp_policy/mediaextractor-x86_64.policy
 @@ -53,5 +53,7 @@ sched_yield: 1
@@ -164,5 +165,5 @@ index 51df1a238d..6846c01d0e 100644
  @include /apex/com.android.media/etc/seccomp_policy/crash_dump.x86_64.policy
  @include /apex/com.android.media/etc/seccomp_policy/code_coverage.x86_64.policy
 -- 
-2.25.1
+2.34.1
 
