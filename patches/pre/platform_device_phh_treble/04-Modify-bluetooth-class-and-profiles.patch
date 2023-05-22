@@ -1,17 +1,18 @@
-From 3e4224d41ec6cfbd6fb5397961b592683370a9fb Mon Sep 17 00:00:00 2001
-From: ChonDoit <thphantomblog@gmail.com>
-Date: Sat, 29 Oct 2022 17:48:30 +0000
-Subject: [PATCH] Modify Bluetooth Class and Profiles
+From 8dad0dcb46234ab1427d8afe7c722009e4e9966b Mon Sep 17 00:00:00 2001
+From: Kuaipz <2685697179@qq.com>
+Date: Mon, 22 May 2023 12:06:50 +0800
+Subject: [PATCH] Modify-bluetooth-class-and-profiles
 
+Change-Id: I254b4cdc0f85abab69dedf758aac580d37c7736e
 ---
  system.prop | 51 +++++++++++++++++++++++++++++++++++----------------
  1 file changed, 35 insertions(+), 16 deletions(-)
 
 diff --git a/system.prop b/system.prop
-index db7c86d..48b1633 100644
+index fa2a5c9..8064835 100644
 --- a/system.prop
 +++ b/system.prop
-@@ -17,19 +17,38 @@ persist.wm.enable_remote_keyguard_animation=0
+@@ -30,22 +30,41 @@ bluetooth.device.class_of_device=90,2,12
  
  # Enable system-side generic bluetooth audio HAL
  persist.bluetooth.system_audio_hal.enabled=1
@@ -66,6 +67,9 @@ index db7c86d..48b1633 100644
 +
 +# This profile leads to bt crash here, uncomment if you need it
 +# bluetooth.profile.sap.server.enabled=true
+ 
+ # Samsung vendors default to a Samsung-specific gadget for MTP. Set this to use AOSP's functionfs MTP
+ vendor.usb.use_ffs_mtp=1
 -- 
 2.34.1
 
