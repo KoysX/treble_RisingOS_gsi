@@ -1,15 +1,15 @@
-From db00398d4455e3d0b1dd16cacc3f41eb5f60316a Mon Sep 17 00:00:00 2001
+From 74d7818b5b39e5e903301bf4a8e7f103c32b3c05 Mon Sep 17 00:00:00 2001
 From: Kuaipz <2685697179@qq.com>
-Date: Fri, 12 May 2023 00:45:26 +0800
-Subject: [PATCH] treble-Sinicization-of-Chinese-launcher3
+Date: Fri, 2 Jun 2023 01:42:25 +0800
+Subject: [PATCH] add-zh-cn-for-launcher3
 
-Change-Id: Ib5819f68cdc273033778dce30bb052f195672488
+Change-Id: I2080ebeffe581ba12b6d5943d5cbb0586b34dd20
 ---
- res/values-zh-rCN/cr_strings.xml | 26 +++++++++++++++++++++++++-
- 1 file changed, 25 insertions(+), 1 deletion(-)
+ res/values-zh-rCN/cr_strings.xml | 42 ++++++++++++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
 diff --git a/res/values-zh-rCN/cr_strings.xml b/res/values-zh-rCN/cr_strings.xml
-index 98cb1d5..7a14ba0 100644
+index 98cb1d5..7de6b17 100644
 --- a/res/values-zh-rCN/cr_strings.xml
 +++ b/res/values-zh-rCN/cr_strings.xml
 @@ -215,6 +215,8 @@
@@ -21,13 +21,28 @@ index 98cb1d5..7a14ba0 100644
      <!-- Background opacity -->
      <string name="background_opacity_title">背景模糊度</string>
      <!-- Taskbar -->
-@@ -250,4 +252,26 @@
+@@ -233,6 +235,11 @@
+     <string name="app_info_last_update">上次更新</string>
+     <string name="app_info_version">版本</string>
+     <string name="app_info_more">更多</string>
++
++    <!-- Force monochrome icons -->
++    <string name="pref_force_monochrome_themed_icons_title">强制单色主题图标</string>
++    <string name="pref_force_monochrome_themed_icons_summary">如果应用程序未提供，则生成单色图标（需要重新切换主题图标）</string>
++
+     <!-- Icon pack -->
+     <string name="icon_pack_title">图标包</string>
+     <string name="icon_pack_default_label">默认</string>
+@@ -250,4 +257,39 @@
      <!-- Restart launcher -->
      <string name="pref_restart_title">重新启动</string>
      <string name="pref_restart_summary">手动重启启动器以应用未生效的设置</string>
--</resources>
-+   <!-- Recents Scroll Vibration -->
++    <string name="restarting_launcher">重新启动启动器...</string>
++    <string name="updating_launcher_components">正在更新启动器组件...</string>
++
++    <!-- Launcher Vibration -->
 +    <string name="pref_recents_vibration_title">在最近滚动条上启用触觉反馈</string>
++    <string name="pref_vib_intensity_title">启动器振动强度</string>
 +    
 +    <string name="recents_kill_app">Kill app</string>
 +    <!-- Toast for Clear All, App Locked n Unlocked -->
@@ -37,8 +52,10 @@ index 98cb1d5..7a14ba0 100644
 +    <!-- QSB -->
 +    <string name="qsb_search_hint">搜索此手机和更多...</string>
 +
-+    <!-- Shake Actions -->
-+    <string name="shake_clear_summary">摇一摇手机清空最近任务</string>
++    <!-- Gestures -->
++    <string name="gestures_category_title">手势设置</string>
++    <string name="gestures_category_summary">配置摇动手势设置</string>
++    <string name="shake_clear_summary">或者摇一摇手机清空最近通话</string>
 +    <string name="shake_clear_intensity_title">摇动强度</string>
 +    <string name="shake_gesture_actions_title">摇动手势动作</string>
 +    <string name="shake_gesture_actions_intensity_title">摇动手势强度</string>
@@ -47,9 +64,15 @@ index 98cb1d5..7a14ba0 100644
 +    <string name="shake_gestures_music">摇动设备播放/暂停/跳过音乐（取决于播放设备）</string>
 +    
 +
++    <!-- About info -->
++    <string name="about_rice_title" translatable="false">Ortus 启动器</string>
++    <string name="about_thanks_cat">特别感谢</string>
++    <string name="about">关于</string>
++    <string name="about_summary">关于 Ortus 启动器的信息</string>
++    <string name="about_app_version">Version 2.0</string>
++    <string name="settings_category" >      </string>
+ </resources>
 +
-+</resources>
-\ No newline at end of file
 -- 
-2.20.1
+2.40.1
 

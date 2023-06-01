@@ -22,7 +22,6 @@ git config --global user.name "xxxx"
 ```
 mkdir ~/bin
 PATH=~/bin:$PATH
-sudo apt-get install curl
 curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo > ~/bin/repo
 chmod a+x ~/bin/repo
 ```

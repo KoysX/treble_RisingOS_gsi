@@ -1,27 +1,28 @@
-From 2b56b81352b22f6a1e4cf72271348e063db1054d Mon Sep 17 00:00:00 2001
+From 36bcd36c00b4f556e9e79ace2782295a4f799d83 Mon Sep 17 00:00:00 2001
 From: Kuaipz <2685697179@qq.com>
-Date: Fri, 12 May 2023 09:38:04 +0800
-Subject: [PATCH] treble-gms-common-lite
+Date: Fri, 2 Jun 2023 01:14:43 +0800
+Subject: [PATCH] treble-gms-common
 
 ---
- common/common-vendor.mk | 9 +++------
- 1 file changed, 3 insertions(+), 6 deletions(-)
+ common/common-vendor.mk | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
 
 diff --git a/common/common-vendor.mk b/common/common-vendor.mk
-index f4ac093..899ec80 100644
+index f4ac093..3ed696d 100644
 --- a/common/common-vendor.mk
 +++ b/common/common-vendor.mk
-@@ -59,7 +59,8 @@ PRODUCT_PACKAGES += \
+@@ -58,8 +58,8 @@ PRODUCT_PACKAGES += \
+     AndroidPlatformServices \
      WellbeingPrebuilt \
      GoogleServicesFramework \
-     GoogleTTS \
+-    GoogleTTS \
 -    Velvet
-+    PrebuiltBugle \
-+    CalendarGooglePrebuilt
++    CalendarGooglePrebuilt \
++    GoogleTTS
  
  ifeq ($(strip $(TARGET_CORE_GMS_EXTRAS)),true)
  PRODUCT_PACKAGES += \
-@@ -96,8 +97,6 @@ PRODUCT_PACKAGES += \
+@@ -96,8 +96,6 @@ PRODUCT_PACKAGES += \
      LocationHistoryPrebuilt \
      MarkupGoogle \
      Photos \
@@ -30,10 +31,11 @@ index f4ac093..899ec80 100644
      ConfigUpdater \
      GoogleOneTimeInitializer \
      GoogleRestorePrebuilt \
-@@ -106,10 +105,8 @@ PRODUCT_PACKAGES += \
+@@ -105,11 +103,8 @@ PRODUCT_PACKAGES += \
+     Phonesky \
      PrebuiltGmsCoreSc \
      AndroidPlatformServices \
-     SetupWizardPrebuilt \
+-    SetupWizardPrebuilt \
 -    Velvet \
      WellbeingPrebuilt \
 -    GoogleServicesFramework \
@@ -43,5 +45,5 @@ index f4ac093..899ec80 100644
  endif
  
 -- 
-2.20.1
+2.40.1
 
