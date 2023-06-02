@@ -20,14 +20,6 @@ TARGET_DISABLE_BLUETOOTH_LE_READ_BUFFER_SIZE_V2 := true
 PRODUCT_PACKAGES += \
        GoogleCameraGo
 
-# VIMUSIC
-PRODUCT_PACKAGES += \
-        ViMusic
-
-# CallRecorder
-PRODUCT_PACKAGES += \
-        CallRecorder
-       
 # Rice
 RISING_MAINTAINER := Kuaipz
 TARGET_ENABLE_BLUR := true
