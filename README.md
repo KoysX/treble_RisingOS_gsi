@@ -53,7 +53,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android
 ### Clone this repo:
 
 ```bash
-git clone https://github.com/Kuaipz/treble_RisingOS_gsi.git -b 13
+git clone https://github.com/KoysX/treble_RisingOS_gsi.git -b 13
 ```
 
 ### Preparing local manifest:
