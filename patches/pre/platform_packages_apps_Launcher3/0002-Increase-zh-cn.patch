@@ -1,0 +1,29 @@
+From ab8867fa68449502c79322425e5985a1831794f2 Mon Sep 17 00:00:00 2001
+From: KoysX <2685697179b@gmail.com>
+Date: Sat, 10 Jun 2023 22:52:03 -0400
+Subject: [PATCH] Increase-zh-cn
+
+Change-Id: Ifa968f395ba7d0838c78ae8260c2c226d649075d
+---
+ res/values-zh-rCN/cr_strings.xml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/res/values-zh-rCN/cr_strings.xml b/res/values-zh-rCN/cr_strings.xml
+index 7de6b17..744f6b1 100644
+--- a/res/values-zh-rCN/cr_strings.xml
++++ b/res/values-zh-rCN/cr_strings.xml
+@@ -291,5 +291,11 @@
+     <string name="about_summary">关于 Ortus 启动器的信息</string>
+     <string name="about_app_version">Version 2.0</string>
+     <string name="settings_category" >      </string>
++
++    <!-- Parallax -->
++    <string name="short_parallax_title">允许短视差</string>
++    <string name="short_parallax_summary">在较少的页面上启用完整的墙纸滚动效果，而不是裁剪墙纸</string>
++    <string name="single_page_center_title">单页居中</string>
++    <string name="single_page_center_summary">如果仅使用单个页面，则居中墙纸</string>
+ </resources>
+ 
+-- 
+2.41.0
+
